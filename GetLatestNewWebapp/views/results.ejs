@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+   <div class="container">
+      <div class="jumbotron">
+         <h1>Showing Results!!</h1>
+        
+      </div>
+      <div>
+            <a href="/">Search Again!</a>   
+      </div>
+   </div>
+   <div class="container">
+        <% data["articles"].forEach(function(data) { %>
+           <div class="row">
+               <div class="container">
+                <h1>
+                 <%= data["title"] %>
+                </h1>   
+            <div class="col-lg-4">
+                <div class=thumbnail>
+                  <img src="<%=data["urlToImage"]%> ">
+                </div>
+            </div>
+            <div class="container">
+                <p>
+                    <%= data["description"] %>
+                </p>
+                <p>
+                    PublishedAt :<%=data["publishedAt"] %>
+                </p>
+                <p>
+                    Author:<%=data["author"]%>
+                </p>
+                <p>
+                    Content: <%=data["content"] %>
+                </p>
+                <p>
+                    <a href="<%=data["url"] %> ">More info</a>
+                </p>
+            </div>
+             </div>
+           </div>
+           
+        <% }) %>
+    
+     </div>
+
+<% include ./partials/footer %>
